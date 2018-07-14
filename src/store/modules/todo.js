@@ -18,7 +18,15 @@ export default {
     async getTodos ({ commit }) {
       const response = await api.get()
       commit('setTodos', response.data)
-      console.log(response)
+    },
+    async createTodo ({ commit }, payload) {
+      const response = await api.create(payload)
+    },
+    async updateTodo ({ commit }, payload) {
+      const response = await api.update(payload)
+    },
+    async deleteTodo ({ commit }, payload) {
+      const response = await api.delete(payload)
     }
   }
 }
